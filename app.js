@@ -12,6 +12,8 @@ const orderRoutes = require('./api/routes/orders')
 mongoose.connect('mongodb+srv://new_user_1:new_user_1@cluster0.k7wenfl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 
 app.use(morgan('dev'))
+// uploads folder publically available
+app.use('/uploads', express.static('uploads'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({}))
 app.use(cors())
