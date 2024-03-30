@@ -8,6 +8,7 @@ const mongoose = require('mongoose')
 
 const productRoutes = require('./api/routes/products')
 const orderRoutes = require('./api/routes/orders')
+const userRoutes = require('./api/routes/user')
 
 mongoose.connect('mongodb+srv://new_user_1:new_user_1@cluster0.k7wenfl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 
@@ -20,6 +21,7 @@ app.use(cors())
 
 app.use('/products', productRoutes)
 app.use('/orders', orderRoutes)
+app.use('/user', userRoutes)
 
 // error handling to handle unknown http request
 app.use((req, res, next) => {
